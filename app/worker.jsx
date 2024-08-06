@@ -16,9 +16,11 @@ import { useState } from "react";
 import FormField from "../components/form/formField";
 import YesNoInput from "../components/form/yesNoInput";
 import { createFireExtinguisherForm } from "../lib/appwrite";
-import { getFireExtinguisherForms } from "../lib/appwrite";
+import DateTimePicker from "@react-native-community/datetimepicker";
 
 export default function Worker() {
+  const [date, setDate] = useState(new Date());
+  const [time, setTime] = useState(new Date());
   const [modalVisible, setModalVisible] = useState(false);
   const [formData, setFormData] = useState({
     licensePlate: "",
@@ -91,16 +93,47 @@ export default function Worker() {
                 value={formData.licensePlate}
                 onChange={(text) => handleChange("licensePlate", text)}
               />
-              <FormField
+              {/* <FormField
                 title="Date"
                 value={formData.date}
                 onChange={(text) => handleChange("date", text)}
+              /> */}
+              <DateTimePicker
+                value={date}
+                mode="date"
+                display="default"
+                onChange={(event, selectedDate) => {
+                  const currentDate = selectedDate || date;
+                  setDate(currentDate);
+                  const formattedDate = `${currentDate.toLocaleString(
+                    "default",
+                    { year: "numeric", month: "long", day: "2-digit" }
+                  )}`;
+                  handleChange("date", formattedDate);
+                }}
               />
-              <FormField
+              <DateTimePicker
+                value={time}
+                mode="time"
+                display="default"
+                onChange={(event, selectedTime) => {
+                  const currentTime = selectedTime || time;
+                  setTime(currentTime);
+                  const formattedTime = `${currentTime.toLocaleString(
+                    "default",
+                    {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    }
+                  )}`;
+                  handleChange("time", formattedTime);
+                }}
+              />
+              {/* <FormField
                 title="Time"
                 value={formData.time}
                 onChange={(text) => handleChange("time", text)}
-              />
+              /> */}
               <FormField
                 title="Inspector"
                 value={formData.inspector}
@@ -174,6 +207,8 @@ export default function Worker() {
                     pressureGauge: "No",
                     additionalComments: "",
                   });
+                  setDate(new Date());
+                  setTime(new Date());
 
                   setModalVisible(false);
                 }}
@@ -188,10 +223,12 @@ export default function Worker() {
 
       <View style={styles.containerNav}>
         <View style={styles.navButton}>
-          <Image
-            style={styles.navImages}
-            source={require("../assets/images/submissions.png")}
-          />
+          <Pressable onPress={() => navigation.navigate("formsPage")}>
+            <Image
+              style={styles.navImages}
+              source={require("../assets/images/submissions.png")}
+            />
+          </Pressable>
           <Text style={styles.navButtonText}>Your Submissions</Text>
         </View>
         <View style={styles.navButton}>

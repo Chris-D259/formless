@@ -7,7 +7,7 @@ export default function Index() {
   const navigation = useNavigation();
 
   const handleSignIn = () => {
-    navigation.navigate("worker");
+    navigation.navigate("SignIn");
   };
   return (
     <SafeAreaView style={styles.container}>
