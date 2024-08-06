@@ -7,7 +7,7 @@ export default function Index() {
   const navigation = useNavigation();
 
   const handleSignIn = () => {
-    navigation.navigate("SignIn");
+    navigation.navigate("worker");
   };
   return (
     <SafeAreaView style={styles.container}>
@@ -16,9 +16,7 @@ export default function Index() {
         source={require("../assets/images/KBM.png")}
       />
       <View style={styles.orangeBar}></View>
-      <Text className="text-green-500" style={styles.openingText}>
-        Welcome to Formless!
-      </Text>
+      <Text style={styles.openingText}>Welcome to Formless!</Text>
       <View style={styles.container2}>
         <TouchableOpacity style={styles.button1} onPress={handleSignIn}>
           <Text style={{ color: "white" }}>Log In</Text>
