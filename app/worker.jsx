@@ -77,7 +77,7 @@ export default function Worker() {
         <StatusBar barStyle="dark-content" />
 
         <ScrollView className="my-14">
-          <View className="flex-1 bg-gray-200 w-full mt-14 rounded-3xl">
+          <View className="flex-1 bg-white w-full mt-14 rounded-3xl">
             <View className="flex-row justify-between items-center mx-3 ">
               <Text className="text-3xl my-5">Fire Extinguisher Form</Text>
               <Pressable
@@ -87,7 +87,7 @@ export default function Worker() {
                 <Text className="text-xl ">Close</Text>
               </Pressable>
             </View>
-            <View className=" w-[90%] bg-gray-500 rounded-2xl items-center self-center">
+            <View className=" w-[90%] bg-white rounded-2xl items-center self-center ">
               <FormField
                 title="License Plate"
                 value={formData.licensePlate}
@@ -98,37 +98,39 @@ export default function Worker() {
                 value={formData.date}
                 onChange={(text) => handleChange("date", text)}
               /> */}
-              <DateTimePicker
-                value={date}
-                mode="date"
-                display="default"
-                onChange={(event, selectedDate) => {
-                  const currentDate = selectedDate || date;
-                  setDate(currentDate);
-                  const formattedDate = `${currentDate.toLocaleString(
-                    "default",
-                    { year: "numeric", month: "long", day: "2-digit" }
-                  )}`;
-                  handleChange("date", formattedDate);
-                }}
-              />
-              <DateTimePicker
-                value={time}
-                mode="time"
-                display="default"
-                onChange={(event, selectedTime) => {
-                  const currentTime = selectedTime || time;
-                  setTime(currentTime);
-                  const formattedTime = `${currentTime.toLocaleString(
-                    "default",
-                    {
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    }
-                  )}`;
-                  handleChange("time", formattedTime);
-                }}
-              />
+              <View className="my-2 bg-black rounded-lg flex-col items-center ">
+                <DateTimePicker
+                  value={date}
+                  mode="date"
+                  display="default"
+                  onChange={(event, selectedDate) => {
+                    const currentDate = selectedDate || date;
+                    setDate(currentDate);
+                    const formattedDate = `${currentDate.toLocaleString(
+                      "default",
+                      { year: "numeric", month: "long", day: "2-digit" }
+                    )}`;
+                    handleChange("date", formattedDate);
+                  }}
+                />
+                <DateTimePicker
+                  value={time}
+                  mode="time"
+                  display="default"
+                  onChange={(event, selectedTime) => {
+                    const currentTime = selectedTime || time;
+                    setTime(currentTime);
+                    const formattedTime = `${currentTime.toLocaleString(
+                      "default",
+                      {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      }
+                    )}`;
+                    handleChange("time", formattedTime);
+                  }}
+                />
+              </View>
               {/* <FormField
                 title="Time"
                 value={formData.time}
