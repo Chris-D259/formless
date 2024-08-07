@@ -39,5 +39,7 @@ Worker User Type:
    View Submitted Forms: Workers can view their previously submitted forms.
    
 Tech Stack
+
 Frontend: React Native with Expo
+
 Backend: Appwrite
