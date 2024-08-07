@@ -43,3 +43,11 @@ Tech Stack
       Frontend: React Native with Expo
 
       Backend: Appwrite
+
+
+Login Info
+
+      Username   Password
+      admin      admin
+      sup        sup
+      emp        emp
