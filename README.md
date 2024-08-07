@@ -23,7 +23,7 @@ In the output, you'll find options to open the app in a
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-Formless Mobile App Prototype
+# Formless Mobile App Prototype
 
 Overview
 Formless is a React Native mobile application prototype developed using Expo and Appwrite. This application allows users to log in and access different features based on their user type. Currently, only the worker user type has implemented features, including the ability to submit and view fire extinguisher forms.
