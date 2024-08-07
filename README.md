@@ -34,12 +34,12 @@ User Authentication: Different users can log in with varying home pages.
 
 Worker User Type:
 
-   Submit Fire Extinguisher Forms: Workers can create and submit fire extinguisher forms.
+      Submit Fire Extinguisher Forms: Workers can create and submit fire extinguisher forms.
    
-   View Submitted Forms: Workers can view their previously submitted forms.
+      View Submitted Forms: Workers can view their previously submitted forms.
    
 Tech Stack
 
-Frontend: React Native with Expo
+      Frontend: React Native with Expo
 
-Backend: Appwrite
+      Backend: Appwrite
