@@ -31,8 +31,11 @@ Formless is a React Native mobile application prototype developed using Expo and
 Features
 
 User Authentication: Different users can log in with varying home pages.
+
 Worker User Type:
+
    Submit Fire Extinguisher Forms: Workers can create and submit fire extinguisher forms.
+   
    View Submitted Forms: Workers can view their previously submitted forms.
    
 Tech Stack
